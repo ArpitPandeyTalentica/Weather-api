@@ -10,3 +10,4 @@ spec:
   type: openapi
   lifecycle: production
   owner: rahul.raj@talentica.com
+  definition: https://raw.githubusercontent.com/rrrraj729/Wheather-api/main/weather-api-swagger.json
