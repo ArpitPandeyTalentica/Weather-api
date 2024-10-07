@@ -3,6 +3,7 @@ kind: API
 metadata:
   name: test-demo-web
   description: A sample API that provides weather forecast information.
+  backstage.io/techdocs-ref: dir:.
 spec:
   type: openapi
   lifecycle: development
