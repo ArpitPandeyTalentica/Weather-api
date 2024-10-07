@@ -3,6 +3,7 @@ kind: API
 metadata:
   name: weather-api-test
   description: A sample API that provides weather forecast information.
+  backstage.io/techdocs-ref: dir:.
 spec:
   type: openapi
   lifecycle: production
