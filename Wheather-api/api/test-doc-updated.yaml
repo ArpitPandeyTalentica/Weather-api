@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: weather-api-test
+  name: test-doc-updated-with-api
   description: A sample API that provides weather forecast information.
   backstage.io/techdocs-ref: dir:.
 spec:
