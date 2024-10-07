@@ -5,7 +5,7 @@ metadata:
   description: A sample API that provides weather forecast information.
   annotations:
     github.com/project-slug: rrrraj729/Wheather-api
-    backstage.io/api-spec: url/to/weather-api-swagger.json # Replace this with the URL or file path to the Swagger JSON file
+    # backstage.io/api-spec: url/to/weather-api-swagger.json # Replace this with the URL or file path to the Swagger JSON file
 spec:
   type: openapi
   lifecycle: production
