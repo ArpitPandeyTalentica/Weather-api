@@ -3,7 +3,8 @@ kind: API
 metadata:
   name: doc-test-latest
   description: A sample API that provides weather forecast information.
-  backstage.io/techdocs-ref: dir:.
+  annotations:
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: openapi
   lifecycle: development
