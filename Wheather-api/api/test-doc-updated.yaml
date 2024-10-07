@@ -1,0 +1,44 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: weather-api-test
+  description: A sample API that provides weather forecast information.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: rahul.raj@talentica.com
+  definition: |
+    openapi: "3.0.1"
+    info:
+      title: Weather API
+      version: "1.0"
+      description: API to get weather forecasts.
+    servers:
+      - url: http://localhost:7007
+    paths:
+      /WeatherForecast:
+        get:
+          tags:
+            - WeatherForecast
+          operationId: GetWeatherForecast
+          responses:
+            '200':
+              description: Success
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/WeatherForecast"
+    components:
+      schemas:
+        WeatherForecast:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+            temperatureC:
+              type: integer
+            summary:
+              type: string
