@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Wheather-api
+  annotations:
+    github.com/project-slug: rrrraj729/Wheather-api
+spec:
+  type: other
+  lifecycle: unknown
+  owner: rahul.raj@talentica.com
