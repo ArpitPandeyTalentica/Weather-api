@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: test-demo-web
-  description: A sample API that provides weather forecast information.
+  name: feature-proto-api
+  description: A sample API that provides operationsl features.
   backstage.io/techdocs-ref: dir:.
 spec:
   type: openapi
