@@ -3,6 +3,9 @@ kind: API
 metadata:
   name: wheather-api-using-raw-link
   description: A sample API that provides operationsl features.
+  tags:
+    - weather
+    - forecast
 spec:
   type: openapi
   lifecycle: development
