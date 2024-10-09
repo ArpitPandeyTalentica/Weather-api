@@ -14,7 +14,7 @@ spec:
       title: Hello World API
       version: '1.0.0'
     servers:
-      - url: http://localhost:7008/api/hello-world
+      - url: http://localhost:7007/api/hello-world
     paths:
       /hello:
         get:
