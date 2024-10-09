@@ -8,4 +8,4 @@ spec:
   lifecycle: development
   owner: rahul.raj@talentica.com
   definition: 
-    $text: https://raw.githubusercontent.com/rrrraj729/Wheather-api/refs/heads/Talentica-backstage-integration/Wheather-api/wheather.json?token=GHSAT0AAAAAACYOP2JJMHKGANXHK364UGGQZYGJ2ZA
+    $text: https://raw.githubusercontent.com/rrrraj729/Wheather-api/refs/heads/Talentica-backstage-integration/Wheather-api/wheather.json?token=GHSAT0AAAAAACYOP2JJGZSXE4SP2L437IBKZYGJ5PQ
