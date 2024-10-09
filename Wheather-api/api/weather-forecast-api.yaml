@@ -19,7 +19,7 @@ spec:
       version: "1.0"
       description: API to get weather forecasts.
     servers:
-      - url: http://localhost:7007
+      - url: http://localhost:7008/api/weather
     paths:
       /WeatherForecast:
         get:
