@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: hello-world-api
+  description: A simple Hello World custom API
+  tags:
+    - hello
+    - world
+spec:
+  type: custom
+  lifecycle: experimental
+  owner: rahul.raj@talentica.com
+  definition: |
+    # Hello World Custom API
+    This is a simple Hello World API for demonstration purposes.
+    It accepts a name as input and returns a personalized greeting message.
