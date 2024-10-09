@@ -3,6 +3,9 @@ kind: API
 metadata:
   name: weather-forecast-api
   description: A sample API that provides weather forecast information.
+  tags:
+    - weather
+    - forecast
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
