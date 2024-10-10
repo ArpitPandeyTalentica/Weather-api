@@ -20,6 +20,11 @@ spec:
       description: API to get weather forecasts.
     servers:
       - url: http://localhost:7008/api/weather
+        description: Local Development Server
+      - url: https://staging-weather-api.example.com/api
+        description: Staging Server
+      - url: https://weather-api.example.com/api
+        description: Production Server
     paths:
       /WeatherForecast:
         get:
