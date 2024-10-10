@@ -1,0 +1,28 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: my-grpc-api
+  description: A sample API that provides grpc demo.
+  tags:
+    - grpc
+    - api
+spec:
+  type: grpc
+  lifecycle: experimental
+  owner: rahul.raj@talentica.com
+  definition: |
+    syntax = "proto3";
+
+    service UserService {
+      rpc GetUser (UserRequest) returns (User);
+    }
+
+    message UserRequest {
+      string id = 1;
+    }
+
+    message User {
+      string id = 1;
+      string name = 2;
+      string email = 3;
+    }
