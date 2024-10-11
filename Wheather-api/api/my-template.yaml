@@ -1,1 +1,37 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: react-frontend-template
+  title: React Frontend Template
+  description: Create a new React frontend application with a standard configuration.
+  tags:
+    - react
+    - frontend
+spec:
+  owner: rahul.raj@talentica.com
+  type: website
+  parameters:
+    - title: Project Details
+      properties:
+        name:
+          title: Project Name
+          type: string
+          description: Name of the project.
+          required: true
+        description:
+          title: Project Description
+          type: string
+          description: A brief description of the project.
+  steps:
+    - id: Fetch
+      name: Fetch the template
+      action: fetch:template
+      input:
+        url: ./template-contents  # Location of the template contents directory.
+    - id: Prepare
+      name: Prepare the project
+      action: scaffolder:prepare
+    - id: Execute
+      name: Execute template
+      action: scaffolder:execute
 
