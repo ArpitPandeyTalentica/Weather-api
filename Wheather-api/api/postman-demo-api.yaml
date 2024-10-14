@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: postman-demo-api
-  description: A sample API that provides weather forecast information.
+  description: A sample API that provides cat facts.
   tags:
     - weather
     - forecast
@@ -21,11 +21,8 @@ spec:
       version: 1.0.0
     servers:
       - url: https://cat-fact.herokuapp.com
-      - url: https://dog.ceo
-      - url: https://ghibliapi.herokuapp.com
-      - url: https://openlibrary.org
     paths:
-      /cat-facts:
+      /facts:  # Updated endpoint to match the curl command
         get:
           summary: Retrieve a random cat fact
           responses:
