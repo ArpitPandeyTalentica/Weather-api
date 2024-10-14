@@ -1,11 +1,11 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: weather-forecast-api
-  description: A sample API that provides weather forecast information.
+  name: postman-demo-api
+  description: A sample API that provides postman demo information.
   tags:
-    - weather
-    - forecast
+    - postman
+    - demo api
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
@@ -13,231 +13,74 @@ spec:
   lifecycle: development
   owner: rahul.raj@talentica.com
   definition: |
-info:
-  title: Public REST APIs
-  description: "This is a collection of different REST APIs that are completley public and do not require any authentication, making it easier for consumers to play with and understand what APIs are all about by seeing the many different ways in which APIs can be used.\n\n## **Animals**\n\nThese are public API endpoints for animals.\n\n- [Cat Facts](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-0046135b-fdad-483b-8d39-0dafa956ef18)\n    \n- [Dog Breeds](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-c66e6384-8d50-457f-a094-cf99d16464ce)\n    \n- [Pet Food Facts](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-f6792034-3182-46f1-bbb2-913aa3ae19a7)\n    \n\n## **Anime**\n\nThese are public API endpoints for anime.\n\n#### Studio Ghibli\n\nThe Studio Ghibli API catalogs the people, places, and things found in the worlds of Ghibli.\n\nWebsite - [https://ghibliapi.herokuapp.com/#](https://ghibliapi.herokuapp.com/#)\n\n- [Films](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-7d0829ef-8786-4a64-86d6-f87c637d340d)\n    \n- [People](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-77009f21-ab10-45c8-8380-77e65a9a299f)\n    \n- [Locations](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-1c355bf7-b74d-4315-bfa8-6599ee3b3767)\n    \n- [Species](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-b833e85b-4c77-45cd-9143-d023b327519d)\n    \n- [Vehicles](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-b73d31b7-380a-445e-a11a-1dd380108f27)\n    \n\n## APIs\n\nThese are public API endpoints for APIs.\n\n#### APIs.guru\n\nWikipedia for Web APIs. Repository of API specs in OpenAPI(fka Swagger) 2.0 format.\n\n- [List API](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-67b878f9-3db3-4601-9bf6-b7e0247acfae)\n    \n\n## Barcodes\n\nThese are public API endpoints for barcodes.\n\n#### Open Food Facts\n\n- [Barcode Lookup](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-79148c6e-9260-46a4-afce-7b9fd9006ca6)\n    \n\n## Bikes\n\nThese are public API endpoints for bikes.\n\n- [Biking Incidents](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-af6b460c-4dd3-45d9-88cd-297098b05eb2)\n    \n\n## Books\n\nThese are public API endpoints for books.\n\n#### Open Library\n\nOpen Library is an initiative of the Internet Archive, a 501(c)(3) non-profit, building a digital library of Internet sites and other cultural artifacts in digital form. Other projects include the Wayback Machine, archive.org and archive-it.org.\n\nWebsite - [https://openlibrary.org/developers/api](https://openlibrary.org/developers/api)\n\n- [Book](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-ad87c520-0b2d-4f29-9764-9e748890b895)\n    \n- [Covers](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-8fcb27ac-6d6a-44e0-9a11-767ab7b05bd5)\n    \n- [Search](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-b5fe1d93-da3b-49cc-a7fc-ade6aaaa2ff7)\n    \n\n## Cars\n\nThese are public API endpoints for cars.\n\n- [Makes of Cars](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-ec7349e6-41bd-4851-b1e0-06676080badf)\n    \n- [Car Manufacturers](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-cff26b45-1f74-4010-8333-4b9c62c7c656)\n    \n\n## Church\n\nThese are public API endpoints for church.\n\n#### Liturgical Calendar\n\nThe API provides access to Roman Catholic liturgical calendar according to the norms set forth by the liturgical reform after the II Vatican Council. Several Sanctorale calendars are available and others can be added easily.\n\n- [Today](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-b721b90b-2fc4-40bb-83f9-18efd2d4f31a)\n    \n- [Tomorrow](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-15117877-77ac-4879-81be-b8cf6ea07352)\n    \n- [Yesterday](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-510e6627-751a-4ee9-8687-03375f8b6211)\n    \n\n#### Hebcal\n\nOur mission at Hebcal.com is to increase awareness of Jewish holidays and to help Jews to be observant of the mitzvot. You can embed Hebcal.com content directly onto your synagogue website with our JavaScript, JSON and RSS APIs.\n\n- [Jewish Calendar](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-4cec6a43-b824-4c99-ba2f-82b81d87ef2c)\n    \n- [Shabbat Times](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-350b9af0-de68-4d78-9bed-20fe51110274)\n    \n\n## Cities\n\nThese are public API endpoints for city data.\n\n## Comics\n\nThese are public API endpoints for comics.\n\n- [XKCD](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-5692e4c2-d40b-4a80-9245-94311f4d9652)\n    \n\n## Cryptocurrency\n\nThese are public API endpoints for cryptocurrency.\n\n#### Coindesk\n\nWebsite - [https://www.coindesk.com/coindesk-api](https://www.coindesk.com/coindesk-api)\n\n- [Current Bitcoin Price](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-082ae3d7-db3a-44c3-9cc0-9b5164d16ad6)\n    \n\n#### Cryptonator\n\nCryptonator provides unique volume of cryptocurrency exchange rates data, which is delivered in easy-to-integrate JSON format via simple HTTPS requests. Prices are updated every 30 seconds, covering 300+ cryptocurrencies across 67 exchanges.  \nWebsite - [https://www.cryptonator.com/api/](https://www.cryptonator.com/api/)\n\n- [Simple Ticker](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-2dbe853f-b3f9-4d48-b19d-cbfc53c632da)\n    \n- [Complete Ticker](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-c3c08f89-e2f1-4c81-96d5-2de4ab914c59)\n    \n\n## Domains\n\nThese are public API endpoints for domains.\n\n#### DomainsDB\n\nRegistered domains search checks the lists of registered domains for names containing particular words/phrases/numbers or symbols. Technically it's just a GUI interface for domains-index.com database containing more than 260M of registered domains and 1000+ TLDS including newGTLDs. It's free to use and could be helpful domains/marketing research tool.\n\n- [Domain Search](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-d2db356e-1c75-47b2-b5a8-32dd279725d6)\n    \n\n## Drones\n\nThese are public API endpoints for drones.\n\n- [Drone Strikes](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-837315e2-7062-4e47-b51e-9f27ec3e797e)\n    \n\n## Earthquakes\n\nThese are public API endpoints for earthquakes.\n\n- [Earthquakes](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-291c0d5d-9146-4591-b760-65e6db459f96)\n    \n\n## Game of Thrones\n\nThese are public API endpoints for Game of Thrones.\n\n- [Characters](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-73cb2148-5314-4c12-b1aa-f090f5891cf6)\n    \n- [Books](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-859b5e1f-ebd1-49e5-9fa0-2f281f08f8d7)\n    \n- [Houses](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-b85d23f2-a419-4167-86df-1377af97b866)\n    \n\n## Gender\n\nThese are public API endpoints for gender.\n\n#### Genderiz.io\n\nWebsite - [https://genderize.io/](https://genderize.io/)\n\n- [Gender Detector](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-a7a438b8-8a55-4d91-92c7-57321ea302e6)\n    \n\n## IP Address\n\nThese are public API endpoints for IP addresses.\n\n#### Ipify\uFEFF\n\n- [IP Address Lookup](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-87ad042d-632e-45d5-aebf-7d1bf5e0bff4)\n    \n\n#### IP2Country\n\nMaps an IP address to a country.\n\n- [Associate IP Address with Country](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-95934387-2a77-4a5e-81e3-b5a684c8eef5)\n    \n\n## Jobs\n\nThese are public API endpoints for jobs.\n\n#### Workforce Data Initiative\n\nThe purpose of this wiki page is to provide a central point for communicating the architecture of the Open Skills API and soliciting feedback from stakeholders.\n\nWebsite - [https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview](https://github.com/workforce-data-initiative/skills-api/wiki/API-Overview)\n\n- [Jobs](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-50f4cc36-5062-47ad-8234-c9efc16b86a2)\n    \n- [Skills](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-76220afc-3afe-493e-bae4-c6a8a5ef6f28)\n    \n\n#### GitHub\n\nGitHub Jobs APIs.\n\nWebsite - [https://jobs.github.com/api](https://jobs.github.com/api)\n\n- [Github Jobs](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-24e50f9b-b7a9-40c1-889f-3a2619f6a890)\n    \n\n## Jokes\n\nThese are public API endpoints for jokes.\n\n- [Random Joke](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-86a5b520-e907-4eee-95fd-6dcdc24f8a83)\n    \n- [Dad Jokes](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-75bbf072-9b6e-4ed5-98c3-6f3d5678d96b)\n    \n- [Chuck Norris Joke](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-9fad4e09-a789-4572-b73a-1baa45249db2)\n    \n\n## Logos\n\nThese are public API endpoints for logos.\n\n#### Clearbit\n\nWebsite - [https://clearbit.com/docs#logo-api](https://clearbit.com/docs#logo-api)\n\n- [Logo](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-ff5e202a-4336-4209-98c5-8f3b4b33844b)\n    \n\n## Music\n\nThese are public API endpoints for music.\n\n- [Lyrics Search](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-8911bbde-451d-4a3b-841e-181ff098cffc)\n    \n\n## News\n\nThese are public API endpoints for news.\n\n- [Historical American Newspapers](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-7653394b-b319-4dc6-a21f-a3a4c8085229)\n    \n\n## Pokemon\n\nThese are public API endpoints for Pokemon.\n\n- [Pokemon Search](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-94233b45-80fd-4e2c-b03d-6413d40573a2)\n    \n\n## Postal Codes\n\nThese are public API endpoints for postal codes.\n\n- [Zip Code Lookup](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-55ea9060-2d0c-420f-b43a-f8834b249866)\n    \n\n## Quotes\n\nThese are public API endpoints for quotes.\n\n- [Ron Swanson Quotes](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-645c4075-941a-48ae-8191-896636348d97)\n    \n\n## Random\n\nThese are public API endpoints for random data.\n\n- [Random Yes/No](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-dd1733e9-78b2-4c0c-9945-999575b47d62)\n    \n\n## Restrooms\n\nThese are public API endpoints for restrooms.\n\n- [Refuge Restrooms](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-0e287398-e58b-42a4-bc4b-a8096376d6ad)\n    \n\n## Space\n\nThese are public API endpoints for space.\n\n#### SpaceX\n\n- [Latest SpaceX Launch](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-b4546b0a-cde9-4af7-93ad-6e9b508f635f)\n    \n\n## Sun\n\nThese are public API endpoints for sun.\n\n- [Sunrise and Sunset](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-68b4b47b-d123-4fe2-bfe0-c8e1cb623146)\n    \n\n## Tacos\n\nThese are public API endpoints for tacos.\n\n- [Random Taco Recipes](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-e03c6518-1604-4466-a73d-f4845a504e0d)\n    \n\n## Television\n\nThese are public API endpoints for television.\n\n- [TVMaze Search](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-fb36cca5-2b86-4698-b362-a201bdd02909)\n    \n\n## Text\n\nThese are public API endpoints for text.\n\n#### SHOUTCLOUD\n\n- [ALL CAPS AS A SERVICE](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-be1322ef-4f87-4275-b142-e0e319b5f8ab)\n    \n\n#### Trivia\n\nThese are public API endpoints for trivia.\n\n- [Random Trivia Question](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-d360051f-75f4-4438-9bdc-45c97b0e6ea0)\n    \n\n## Universities\n\nThese are public API endpoints for universities.\n\n- [University Search](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-068625c4-95f6-4e06-afb3-7ca055e72eb0)\n    \n\n## Website Breaches\n\nThese are public API endpoints for website breaches.\n\n- [Breaches](https://www.postman.com/cs-demo/workspace/public-rest-apis/request/8854915-3571fd3b-fd71-4391-8b04-a851e8e7075d)"
-  version: 1.0.0
-servers:
-  - url: https://cat-fact.herokuapp.com
-  - url: https://dog.ceo
-  - url: https://world.openpetfoodfacts.org
-  - url: https://ghibliapi.herokuapp.com
-  - url: http://api.apis.guru
-  - url: https://world.openfoodfacts.org
-  - url: https://bikewise.org
-  - url: https://openlibrary.org
-  - url: http://covers.openlibrary.org
-  - url: http://openlibrary.org
-  - url: https://vpic.nhtsa.dot.gov
-  - url: http://calapi.inadiutorium.cz
-  - url: https://www.hebcal.com
-  - url: https://xkcd.com
-  - url: https://api.coindesk.com
-  - url: https://api.cryptonator.com
-  - url: https://api.domainsdb.info
-  - url: http://api.dronestre.am
-  - url: https://earthquake.usgs.gov
-  - url: https://www.anapioficeandfire.com
-  - url: https://api.genderize.io
-  - url: https://api.ipify.org
-  - url: https://api.ip2country.info
-  - url: http://api.dataatwork.org
-  - url: https://jobs.github.com
-  - url: https://official-joke-api.appspot.com
-  - url: https://icanhazdadjoke.com
-  - url: http://api.icndb.com
-  - url: https://logo.clearbit.com
-  - url: https://api.lyrics.ovh
-  - url: https://chroniclingamerica.loc.gov
-  - url: https://pokeapi.co
-  - url: http://api.zippopotam.us
-  - url: https://ron-swanson-quotes.herokuapp.com
-  - url: https://yesno.wtf
-  - url: https://www.refugerestrooms.org
-  - url: https://api.spacexdata.com
-  - url: https://api.sunrise-sunset.org
-  - url: http://taco-randomizer.herokuapp.com
-  - url: http://api.tvmaze.com
-  - url: http://api.shoutcloud.io
-  - url: http://jservice.io
-  - url: http://universities.hipolabs.com
-  - url: https://haveibeenpwned.com
-tags:
-  - name: Animals
-    description: These are public API endpoints for animals.
-
-
-      Website - https://openlibrary.org/developers/api
-  - name: Cars
-    description: These are public API endpoints for cars.
-  - name: Church
-    description: These are public API endpoints for church.
-  - name: Church > Liturgical Calendar
-    description: >-
-      The API provides access to Roman Catholic liturgical calendar according to
-      the norms set forth by the liturgical reform after the II Vatican Council.
-      Several Sanctorale calendars are available and others can be added easily.
-paths:
-  /facts/:
-    get:
-      tags:
-        - Animals
-      summary: Cat Facts
-      description: |-
-        Facts about cats.
-
-        URL - https://alexwohlbruck.github.io/cat-facts/
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/breeds/list/all:
-    get:
-      tags:
-        - Animals
-      summary: Dog Breeds
-      description: |-
-        List all dog breeds.
-
-        URL - https://dog.ceo/dog-api/documentation/
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/v0/product/20106836.json:
-    get:
-      tags:
-        - Animals
-      summary: Pet Food Facts
-      description: Returns facts on pet food using barcode.
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /films:
-    get:
-      tags:
-        - Anime > Studio Ghibli
-      summary: Films
-      description: >-
-        The Films endpoint returns information about all of the Studio Ghibli
-        films.
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /people:
-    get:
-      tags:
-        - Anime > Studio Ghibli
-      summary: People
-      description: >-
-        The People endpoint returns information about all of the Studio Ghibli
-        people. This broadly includes all Ghibli characters, human and non.
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /locations:
-    get:
-      tags:
-        - Anime > Studio Ghibli
-      summary: Locations
-      description: >-
-        The Locations endpoint returns information about all of the Studio
-        Ghibli locations. This broadly includes lands, countries, and places.
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /species:
-    get:
-      tags:
-        - Anime > Studio Ghibli
-      summary: Species
-      description: >-
-        The Species endpoint returns information about all of the Studio Ghibli
-        species. This includes humans, animals, and spirits et al.
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /vehicles:
-    get:
-      tags:
-        - Anime > Studio Ghibli
-      summary: Vehicles
-      description: >-
-        The Vehicles endpoint returns information about all of the Studio Ghibli
-        vechiles. This includes cars, ships, and planes.
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /v2/list.json:
-    get:
-      tags:
-        - APIs > APIs.guru
-      summary: List API
-      description: List all of the APIs in the directory.
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/v0/product/737628064502.json:
-    get:
-      tags:
-        - Barcodes > Open Food Facts
-      summary: Barcode Lookup
-      description: Searches for product details using barcode.
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/v2/incidents:
-    get:
-      tags:
-        - Bikes
-      summary: Biking Incidents
-      description: >-
-        Bikewise is a place to learn about and report bike crashes, hazards, and
-        thefts.
-      parameters:
-        - name: page
-          in: query
-          schema:
-            type: integer
-          example: '1'
-        - name: proximity_square
-          in: query
-          schema:
-            type: integer
-          example: '100'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/books:
-    get:
-      tags:
-        - Game of Thrones
-      summary: Books
-      description: |-
-        Returns a list of Game of Thrones books.
-        Website - https://anapioficeandfire.com/Documentation
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
+    openapi: 3.0.0
+    info:
+      title: Public REST APIs
+      description: "This is a collection of different REST APIs that are completely public and do not require any authentication, making it easier for consumers to play with and understand what APIs are all about."
+      version: 1.0.0
+    servers:
+      - url: https://cat-fact.herokuapp.com
+      - url: https://dog.ceo
+      - url: https://ghibliapi.herokuapp.com
+      - url: https://openlibrary.org
+    paths:
+      /cat-facts:
+        get:
+          summary: Retrieve a random cat fact
+          responses:
+            '200':
+              description: A random cat fact
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      fact:
+                        type: string
+      /breeds/image/random:
+        get:
+          summary: Retrieve a random dog image
+          responses:
+            '200':
+              description: A random dog image
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      status:
+                        type: string
+      /films:
+        get:
+          summary: Retrieve a list of Studio Ghibli films
+          responses:
+            '200':
+              description: A list of Studio Ghibli films
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+      /books:
+        get:
+          summary: Retrieve a list of books from Open Library
+          responses:
+            '200':
+              description: A list of books
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                        author:
+                          type: string
