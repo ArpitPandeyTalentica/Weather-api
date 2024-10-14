@@ -38,21 +38,9 @@ spec:
                 application/json:
                   schema:
                     type: array
-                  items:
+                    items:
                     $ref: "#/components/schemas/WeatherForecast"
     components:
-      securitySchemes:
-        OAuth2:
-          type: oauth2
-          flows:
-            authorizationCode:
-              authorizationUrl: https://github.com/login/oauth/authorize
-              tokenUrl: https://github.com/login/oauth/access_token
-              scopes:
-                read: Grants read access
-                write: Grants write access
-    security:
-      - OAuth2: [read, write]
       schemas:
         WeatherForecast:
           type: object
