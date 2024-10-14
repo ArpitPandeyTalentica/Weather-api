@@ -9,7 +9,7 @@
       "ApiKeyAuth": {
         "type": "apiKey",
         "in": "header",
-        "name": "Authorization"  // This is where the Personal Access Token will be sent
+        "name": "Authorization"
       }
     },
     "schemas": {
@@ -82,7 +82,7 @@
         "operationId": "GetWeatherForecast",
         "security": [
           {
-            "ApiKeyAuth": []  // Apply the security scheme to this operation
+            "ApiKeyAuth": []
           }
         ],
         "responses": {
