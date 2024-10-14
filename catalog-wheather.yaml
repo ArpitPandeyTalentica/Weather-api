@@ -12,14 +12,3 @@ spec:
   owner: rahul.raj@talentica.com
   definition:
     $text: https://github.com/rrrraj729/Wheather-api/blob/Talentica-backstage-integration/Wheather-api/wheather.json
-
-  # Define the security scheme in the Backstage entity spec itself (since the OpenAPI file is external)
-  security:
-    - ApiKeyAuth: []
-
-  components:
-    securitySchemes:
-      ApiKeyAuth:
-        type: apiKey
-        in: header
-        name: Authorization  # Personal Access Token to be passed in Authorization header
