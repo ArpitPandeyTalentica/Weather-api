@@ -20,9 +20,9 @@ spec:
       description: "This is a collection of different REST APIs that are completely public and do not require any authentication, making it easier for consumers to play with and understand what APIs are all about."
       version: 1.0.0
     servers:
-      - url: https://cat-fact.herokuapp.com
+      - url: https://catfact.ninja
     paths:
-      /facts:  # Updated endpoint to match the curl command
+      /fact:  # Ensure this matches the working endpoint
         get:
           summary: Retrieve a random cat fact
           responses:
@@ -35,6 +35,8 @@ spec:
                     properties:
                       fact:
                         type: string
+                      length:
+                        type: integer
       /breeds/image/random:
         get:
           summary: Retrieve a random dog image
