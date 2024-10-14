@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: weather-forecast-api
+  name: weather-forecast-api-with-auth
   description: A sample API that provides weather forecast information.
   tags:
     - weather
