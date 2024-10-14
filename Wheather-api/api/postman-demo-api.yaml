@@ -1,11 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: cat-facts-api
+  name: postman-demo-api
   description: A sample API that provides cat facts.
   tags:
+    - weather
+    - forecast
     - demo-api
-    - cat-facts
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
@@ -13,42 +14,24 @@ spec:
   lifecycle: development
   owner: rahul.raj@talentica.com
   definition: |
-    openapi: "3.0.1"
+    openapi: 3.0.0
     info:
-      title: Cat Facts API
-      version: "1.0"
-      description: API to get random cat facts.
+      title: Public REST APIs
+      description: "This is a collection of different REST APIs that require authentication for access."
+      version: 1.0.0
     servers:
       - url: https://catfact.ninja
-        description: Production Server
-
-    # Define security schemes (API Key in header for PAT)
     components:
       securitySchemes:
         ApiKeyAuth:
           type: apiKey
           in: header
           name: Authorization  # Use the 'Authorization' header to pass the token
-
-      schemas:
-        CatFact:
-          type: object
-          properties:
-            fact:
-              type: string
-            length:
-              type: integer
-
-    # Apply security globally (for all paths)
     security:
-      - ApiKeyAuth: []
-
+      - ApiKeyAuth: []  # Apply security globally (for all paths)
     paths:
-      /fact:
+      /fact:  # Ensure this matches the working endpoint
         get:
-          tags:
-            - CatFacts
-          operationId: GetRandomCatFact
           summary: Retrieve a random cat fact
           responses:
             '200':
@@ -56,4 +39,56 @@ spec:
               content:
                 application/json:
                   schema:
-                    $ref: "#/components/schemas/CatFact"
+                    type: object
+                    properties:
+                      fact:
+                        type: string
+                      length:
+                        type: integer
+      /breeds/image/random:
+        get:
+          summary: Retrieve a random dog image
+          responses:
+            '200':
+              description: A random dog image
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      status:
+                        type: string
+      /films:
+        get:
+          summary: Retrieve a list of Studio Ghibli films
+          responses:
+            '200':
+              description: A list of Studio Ghibli films
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+      /books:
+        get:
+          summary: Retrieve a list of books from Open Library
+          responses:
+            '200':
+              description: A list of books
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                        author:
+                          type: string
