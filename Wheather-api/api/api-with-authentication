@@ -1,0 +1,30 @@
+openapi: 3.0.0
+info:
+  title: Example API With Auth
+  description: This is an example API that requires OAuth2 authentication.
+  version: "1.0.0"
+
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://github.com/login/oauth/authorize
+          tokenUrl: https://github.com/login/oauth/access_token
+          scopes:
+            read: Grants read access
+            write: Grants write access
+
+security:
+  - OAuth2: [read, write]
+
+paths:
+  /example:
+    get:
+      summary: "Get Example Data"
+      security:
+        - OAuth2: [read]
+      responses:
+        '200':
+          description: "Successful response"
