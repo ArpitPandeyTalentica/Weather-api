@@ -22,17 +22,9 @@ spec:
     servers:
       - url: https://catfact.ninja
     paths:
-      /fact:
+      /fact:  # Ensure this matches the working endpoint
         get:
           summary: Retrieve a random cat fact
-          parameters:
-            - name: Authorization
-              in: header
-              required: true
-              description: GitHub Personal Access Token for authentication.
-              schema:
-                type: string
-                example: "token YOUR_GITHUB_TOKEN"  # Replace with actual token or use environment variables in implementation
           responses:
             '200':
               description: A random cat fact
