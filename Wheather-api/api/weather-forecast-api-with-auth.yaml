@@ -1,0 +1,74 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: weather-forecast-api-with-auth
+  description: A sample API that provides weather forecast information.
+  tags:
+    - weather
+    - forecast
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: development
+  owner: rahul.raj@talentica.com
+  definition: |
+    openapi: "3.0.1"
+    info:
+      title: Weather API
+      version: "1.0"
+      description: API to get weather forecasts.
+    servers:
+      - url: http://localhost:7008/api/weather
+        description: Local Development Server
+      - url: https://staging-weather-api.example.com/api
+        description: Staging Server
+      - url: https://weather-api.example.com/api
+        description: Production Server
+
+    # Define security schemes
+    components:
+      securitySchemes:
+        OAuth2:
+          type: oauth2
+          flows:
+            authorizationCode:
+              authorizationUrl: https://github.com/login/oauth/authorize
+              tokenUrl: https://github.com/login/oauth/access_token
+              scopes:
+                read: Grants read access to the API
+                write: Grants write access to the API
+
+      schemas:
+        WeatherForecast:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+            temperatureC:
+              type: integer
+            summary:
+              type: string
+
+    # Global security requirement for all paths
+    security:
+      - OAuth2: [read]
+
+    paths:
+      /WeatherForecast:
+        get:
+          tags:
+            - WeatherForecast
+          operationId: GetWeatherForecast
+          security:
+            - OAuth2: [read]  # Optional: This can be applied globally or per operation
+          responses:
+            '200':
+              description: Success
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/WeatherForecast"
