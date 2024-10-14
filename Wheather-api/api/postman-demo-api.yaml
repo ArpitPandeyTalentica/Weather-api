@@ -2,10 +2,11 @@ apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: postman-demo-api
-  description: A sample API that provides postman demo information.
+  description: A sample API that provides weather forecast information.
   tags:
-    - postman
-    - demo api
+    - weather
+    - forecast
+    - demo-api
   annotations:
     backstage.io/techdocs-ref: dir:.
 spec:
