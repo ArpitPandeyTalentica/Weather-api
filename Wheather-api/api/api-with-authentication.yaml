@@ -1,9 +1,8 @@
-# Backstage API Metadata
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
   name: example-api-using-auth
-  description: This is an example API that requires OAuth2 authentication for all requests.
+  description: Example API that requires OAuth2 authentication.
   tags:
     - oauth
     - example
@@ -11,71 +10,69 @@ metadata:
 spec:
   type: openapi
   lifecycle: production
-  owner: rahul.raj@talentica.com
+  owner: rrrraj729
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: Example API
+      description: This API requires OAuth2 authentication for all requests.
+      version: "1.0.0"
 
-# OpenAPI 3.0 Definition
-definition: |
-  openapi: 3.0.0
-  info:
-    title: Example API
-    description: This API requires OAuth2 authentication for all requests.
-    version: "1.0.0"
+    components:
+      securitySchemes:
+        OAuth2:
+          type: oauth2
+          flows:
+            authorizationCode:
+              authorizationUrl: https://github.com/login/oauth/authorize
+              tokenUrl: https://github.com/login/oauth/access_token
+              scopes:
+                read: Grants read access to the API
+                write: Grants write access to the API
 
-  components:
-    securitySchemes:
-      OAuth2:
-        type: oauth2
-        flows:
-          authorizationCode:
-            authorizationUrl: https://github.com/login/oauth/authorize
-            tokenUrl: https://github.com/login/oauth/access_token
-            scopes:
-              read: Grants read access to the API
-              write: Grants write access to the API
+    security:
+      - OAuth2: [read]
 
-  security:
-    - OAuth2: [read]
+    paths:
+      /example:
+        get:
+          summary: Get Example Data
+          description: An example of a GET request that requires OAuth2 authentication.
+          responses:
+            '200':
+              description: Successful response
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: "Authenticated access successful"
 
-  paths:
-    /example:
-      get:
-        summary: Get Example Data
-        description: An example of a GET request that requires OAuth2 authentication.
-        responses:
-          '200':
-            description: Successful response
+      /example-write:
+        post:
+          summary: Create Example Data
+          description: An example of a POST request that requires OAuth2 authentication with write scope.
+          security:
+            - OAuth2: [write]  # Overrides global security with write scope
+          requestBody:
             content:
               application/json:
                 schema:
                   type: object
                   properties:
-                    message:
+                    data:
                       type: string
-                      example: "Authenticated access successful"
-
-    /example-write:
-      post:
-        summary: Create Example Data
-        description: An example of a POST request that requires OAuth2 authentication with write scope.
-        security:
-          - OAuth2: [write]  # Overrides global security with write scope
-        requestBody:
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  data:
-                    type: string
-                    example: "Some data to create"
-        responses:
-          '201':
-            description: Created
-            content:
-              application/json:
-                schema:
-                  type: object
-                  properties:
-                    status:
-                      type: string
-                      example: "Created"
+                      example: "Some data to create"
+          responses:
+            '201':
+              description: Created
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+                        example: "Created"
