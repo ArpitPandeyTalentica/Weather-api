@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: wheather-api-using-raw-link
-  description: A sample API that provides operationsl features.
+  name: weather-api-using-raw-link
+  description: A sample API that provides operational features.
   tags:
     - weather
     - forecast
@@ -10,5 +10,16 @@ spec:
   type: openapi
   lifecycle: development
   owner: rahul.raj@talentica.com
-  definition: 
+  definition:
     $text: https://github.com/rrrraj729/Wheather-api/blob/Talentica-backstage-integration/Wheather-api/wheather.json
+
+  # Define the security scheme in the Backstage entity spec itself (since the OpenAPI file is external)
+  security:
+    - ApiKeyAuth: []
+
+  components:
+    securitySchemes:
+      ApiKeyAuth:
+        type: apiKey
+        in: header
+        name: Authorization  # Personal Access Token to be passed in Authorization header
