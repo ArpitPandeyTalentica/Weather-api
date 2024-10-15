@@ -13,6 +13,7 @@ spec:
   lifecycle: stable
   owner: rahul.raj@talentica.com  # Owner in spec
   system: weather-system
+  version: '1.0.0'  # Version field added
   definition: ./openapi-v1.yaml  # Path to OpenAPI specification for v1
 
 ---
@@ -32,4 +33,5 @@ spec:
   lifecycle: experimental
   owner: rahul.raj@talentica.com  # Owner in spec
   system: weather-system
+  version: '2.0.0'  # Version field added
   definition: ./openapi-v2.yaml  # Path to OpenAPI specification for v2
