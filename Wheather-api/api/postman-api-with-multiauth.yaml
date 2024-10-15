@@ -1,0 +1,204 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: postman-api-with-multi-authentication
+  description: A sample API that provides various data with different authentication methods.
+  tags:
+    - api
+    - demo
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: development
+  owner: rahul.raj@talentica.com
+  definition: |
+    openapi: 3.0.1
+    info:
+      title: Sample API with Multiple Auth Types
+      version: "1.0"
+      description: A demonstration of various authentication methods in OpenAPI.
+    servers:
+      - url: https://api.example.com/v1
+        description: Production Server
+      - url: https://staging-api.example.com/v1
+        description: Staging Server
+
+    # Define security schemes globally
+    components:
+      securitySchemes:
+        # HTTP Basic Authentication
+        basicAuth:
+          type: http
+          scheme: basic
+
+        # Bearer Token Authentication (JWT)
+        bearerAuth:
+          type: http
+          scheme: bearer
+          bearerFormat: JWT  # Optional, you can specify token format
+
+        # API Key in Header
+        ApiKeyAuthHeader:
+          type: apiKey
+          in: header
+          name: X-API-KEY
+
+        # API Key in Query
+        ApiKeyAuthQuery:
+          type: apiKey
+          in: query
+          name: api_key
+
+        # OAuth2 with Authorization Code Flow
+        OAuth2Auth:
+          type: oauth2
+          flows:
+            authorizationCode:
+              authorizationUrl: https://example.com/oauth/authorize
+              tokenUrl: https://example.com/oauth/token
+              scopes:
+                read: Grants read access
+                write: Grants write access
+
+        # OpenID Connect
+        OpenIDConnectAuth:
+          type: openIdConnect
+          openIdConnectUrl: https://example.com/.well-known/openid-configuration
+
+      schemas:
+        WeatherForecast:
+          type: object
+          properties:
+            date:
+              type: string
+              format: date
+            temperatureC:
+              type: integer
+            summary:
+              type: string
+
+        CatFact:
+          type: object
+          properties:
+            fact:
+              type: string
+            length:
+              type: integer
+
+    # Apply security globally for all APIs
+    security:
+      - basicAuth: []
+      - bearerAuth: []
+      - ApiKeyAuthHeader: []
+      - OAuth2Auth: []
+      - OpenIDConnectAuth: []
+
+    paths:
+      /public-data:
+        get:
+          summary: Retrieve public data (No auth required)
+          security: []  # No authentication required
+          responses:
+            '200':
+              description: Success
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      data:
+                        type: string
+
+      /private-data:
+        get:
+          summary: Retrieve private data (Requires JWT Bearer Auth)
+          security:
+            - bearerAuth: []  # Only Bearer (JWT) authentication required
+          responses:
+            '200':
+              description: Success
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      data:
+                        type: string
+
+      /admin-data:
+        get:
+          summary: Retrieve admin data (Requires OAuth2)
+          security:
+            - OAuth2Auth: ['read']  # Only OAuth2 with 'read' scope required
+          responses:
+            '200':
+              description: Success
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      data:
+                        type: string
+
+      /query-api-key:
+        get:
+          summary: Retrieve data with API Key in query (Requires API Key)
+          security:
+            - ApiKeyAuthQuery: []  # Only API Key in query parameter required
+          responses:
+            '200':
+              description: Success
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      data:
+                        type: string
+
+      /header-api-key:
+        get:
+          summary: Retrieve data with API Key in header (Requires API Key)
+          security:
+            - ApiKeyAuthHeader: []  # Only API Key in header required
+          responses:
+            '200':
+              description: Success
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      data:
+                        type: string
+
+      /WeatherForecast:
+        get:
+          tags:
+            - WeatherForecast
+          operationId: GetWeatherForecast
+          summary: Get weather forecast data
+          responses:
+            '200':
+              description: Successful response with weather data
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/WeatherForecast"
+
+      /fact:
+        get:
+          summary: Retrieve a random cat fact
+          security:
+            - bearerAuth: []  # Bearer authentication required (JWT)
+          responses:
+            '200':
+              description: A random cat fact
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/CatFact"
