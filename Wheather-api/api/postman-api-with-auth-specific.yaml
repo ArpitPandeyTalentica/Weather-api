@@ -1,0 +1,71 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: postman-api-with-auth-api-specific
+  description: A sample API that provides cat facts with JWT authentication on a specific endpoint.
+  tags:
+    - api
+    - demo
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: development
+  owner: rahul.raj@talentica.com
+  definition: |
+    openapi: 3.0.1
+    info:
+      title: Cat Facts API
+      version: "1.0"
+      description: "This API provides random cat facts with JWT authentication on the /fact endpoint."
+    servers:
+      - url: https://catfact.ninja
+        description: Production Server
+
+    # Define security schemes for authentication
+    components:
+      securitySchemes:
+        # Bearer Token Authentication (JWT)
+        bearerAuth:
+          type: http
+          scheme: bearer
+          bearerFormat: JWT
+
+      schemas:
+        CatFact:
+          type: object
+          properties:
+            fact:
+              type: string
+            length:
+              type: integer
+
+    paths:
+      /fact:
+        get:
+          summary: Retrieve a random cat fact (Requires JWT Bearer Auth)
+          security:
+            - bearerAuth: []  # JWT Bearer authentication required
+          responses:
+            '200':
+              description: A random cat fact
+              content:
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/CatFact"
+
+      /public:
+        get:
+          summary: Retrieve public data (No authentication required)
+          security: []  # No authentication required for this endpoint
+          responses:
+            '200':
+              description: Public data
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: "This is public data."
