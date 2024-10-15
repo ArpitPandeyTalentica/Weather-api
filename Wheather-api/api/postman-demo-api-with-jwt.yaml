@@ -1,0 +1,96 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: postman-demo-api-with-jwt
+  description: A sample API that provides cat facts.
+  tags:
+    - weather
+    - forecast
+    - demo-api
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: development
+  owner: rahul.raj@talentica.com
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: Public REST APIs
+      description: "This is a collection of different REST APIs that require JWT authentication for access."
+      version: 1.0.0
+    servers:
+      - url: https://catfact.ninja
+    components:
+      securitySchemes:
+        bearerAuth:
+          type: http
+          scheme: bearer
+          bearerFormat: JWT  # Optional - specifies the token format (JWT in this case)
+    security:
+      - bearerAuth: []  # Apply JWT authentication globally to all paths
+    paths:
+      /fact:  # Ensure this matches the working endpoint
+        get:
+          summary: Retrieve a random cat fact
+          security:
+            - bearerAuth: []  # Apply JWT authentication to this specific endpoint (optional, global is already applied)
+          responses:
+            '200':
+              description: A random cat fact
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      fact:
+                        type: string
+                      length:
+                        type: integer
+      /breeds/image/random:
+        get:
+          summary: Retrieve a random dog image
+          responses:
+            '200':
+              description: A random dog image
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      status:
+                        type: string
+      /films:
+        get:
+          summary: Retrieve a list of Studio Ghibli films
+          responses:
+            '200':
+              description: A list of Studio Ghibli films
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+      /books:
+        get:
+          summary: Retrieve a list of books from Open Library
+          responses:
+            '200':
+              description: A list of books
+              content:
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                        author:
+                          type: string
