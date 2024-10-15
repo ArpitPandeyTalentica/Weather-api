@@ -15,6 +15,14 @@ spec:
       version: '1.0.0'
     servers:
       - url: http://localhost:7008/api/hello-world
+    components:
+      securitySchemes:
+        bearerAuth:
+          type: http
+          scheme: bearer
+          bearerFormat: JWT  # Optional - specifies the token format (JWT in this case)
+    security:
+      - bearerAuth: []  # Apply JWT authentication globally to all paths
     paths:
       /hello:
         get:
