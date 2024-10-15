@@ -19,6 +19,7 @@ spec:
       version: "1.0"
       description: "This API provides random cat facts with JWT authentication on the /fact endpoint."
     servers:
+      - url: https://www.boredapi.com/api
       - url: https://catfact.ninja
         description: Production Server
 
@@ -54,7 +55,7 @@ spec:
                   schema:
                     $ref: "#/components/schemas/CatFact"
 
-      /public:
+      /activity:
         get:
           summary: Retrieve public data (No authentication required)
           security: []  # No authentication required for this endpoint
