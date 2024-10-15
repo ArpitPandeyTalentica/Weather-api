@@ -19,6 +19,7 @@ spec:
       version: "1.0"
       description: A demonstration of various authentication methods in OpenAPI.
     servers:
+      - url: https://catfact.ninja
       - url: https://api.example.com/v1
         description: Production Server
       - url: https://staging-api.example.com/v1
