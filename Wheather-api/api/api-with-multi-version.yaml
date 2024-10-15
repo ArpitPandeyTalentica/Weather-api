@@ -7,10 +7,11 @@ metadata:
   tags:
     - weather
     - forecast
-  owner: rahul.raj@talentica.com
+  owner: rahul.raj@talentica.com  # Owner in metadata
 spec:
   type: openapi
   lifecycle: stable
+  owner: rahul.raj@talentica.com  # Owner in spec
   system: weather-system
   definition: ./openapi-v1.yaml  # Path to OpenAPI specification for v1
 
@@ -25,9 +26,10 @@ metadata:
     - weather
     - forecast
     - new-version
-  owner: rahul.raj@talentica.com
+  owner: rahul.raj@talentica.com  # Owner in metadata
 spec:
   type: openapi
   lifecycle: experimental
+  owner: rahul.raj@talentica.com  # Owner in spec
   system: weather-system
   definition: ./openapi-v2.yaml  # Path to OpenAPI specification for v2
