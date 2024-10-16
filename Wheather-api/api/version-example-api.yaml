@@ -16,6 +16,7 @@ spec:
   definition: ./openapi-v1.yaml
 
 ---
+
 # Version 2 of the Weather Forecast API
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -30,6 +31,7 @@ metadata:
 spec:
   type: openapi
   lifecycle: experimental
+  owner: rahul.raj@talentica.com  # Add owner here
   system: weather-system
   version: '2.0.0'
   definition: ./openapi-v2.yaml
