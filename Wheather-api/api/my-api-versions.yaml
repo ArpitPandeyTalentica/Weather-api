@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1beta3
+kind: API
+metadata:
+  name: my-api-versions
+  description: My API with versioning
+spec:
+  type: service
+  lifecycle: production
+  owner: rahul.raj@talentica.com
+  definition:
+    # Your OpenAPI or GraphQL definition here
+  versions:
+    - version: v1
+      description: Version 1 of the API
+    - version: v2
+      description: Version 2 of the API
