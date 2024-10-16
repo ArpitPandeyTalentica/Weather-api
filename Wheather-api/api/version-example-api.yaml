@@ -1,0 +1,35 @@
+# Version 1 of the Weather Forecast API
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: weather-forecast-v1
+  description: Weather Forecast API Version 1
+  owner: rahul.raj@talentica.com
+  tags:
+    - weather
+    - forecast
+spec:
+  type: openapi
+  lifecycle: stable
+  system: weather-system
+  version: '1.0.0'
+  definition: ./openapi-v1.yaml
+
+---
+# Version 2 of the Weather Forecast API
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: weather-forecast-v2
+  description: Weather Forecast API Version 2
+  owner: rahul.raj@talentica.com
+  tags:
+    - weather
+    - forecast
+    - new-version
+spec:
+  type: openapi
+  lifecycle: experimental
+  system: weather-system
+  version: '2.0.0'
+  definition: ./openapi-v2.yaml
