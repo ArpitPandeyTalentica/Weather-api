@@ -6,9 +6,9 @@ metadata:
   tags:
     - cat-facts
     - openapi
-    - version1
   annotations:
-    backstage.io/version: "1.0.0"
+    backstage.io/version: "v1"
+    backstage.io/system: "cat-facts"
 spec:
   type: openapi
   lifecycle: production
@@ -25,12 +25,5 @@ spec:
           responses:
             '200':
               description: A random cat fact
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      fact:
-                        type: string
     servers:
       - url: https://catfact.ninja
