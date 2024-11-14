@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: cat-facts-api-v2
+  name: cat-facts-api
   description: Cat Facts API Version 2
   tags:
     - cat-facts
