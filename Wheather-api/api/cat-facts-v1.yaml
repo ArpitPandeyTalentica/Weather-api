@@ -1,0 +1,36 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: cat-facts-api-v1
+  description: Cat Facts API Version 1
+  tags:
+    - cat-facts
+    - openapi
+    - version1
+  annotations:
+    backstage.io/version: "1.0.0"
+spec:
+  type: openapi
+  lifecycle: production
+  owner: team-a
+  definition: |
+    openapi: 3.0.0
+    info:
+      title: Cat Facts API v1
+      version: 1.0.0
+    paths:
+      /fact:
+        get:
+          summary: Get a single random cat fact
+          responses:
+            '200':
+              description: A random cat fact
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      fact:
+                        type: string
+    servers:
+      - url: https://catfact.ninja
