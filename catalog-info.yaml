@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: Wheather-api
+  name: Weather-api
   annotations:
-    github.com/project-slug: rrrraj729/Wheather-api
+    github.com/project-slug: ArpitPandeyTalentica/Weather-api
 spec:
-  type: other
-  lifecycle: unknown
-  owner: rahul.raj@talentica.com
+  type: service  # Adjust the type if necessary
+  lifecycle: production  # Change lifecycle to match the actual state
+  owner: arpit.pandey@talentica.com
