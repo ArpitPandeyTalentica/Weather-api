@@ -1,0 +1,182 @@
+apiVersion: backstage.io/v1alpha1
+kind: Catalog
+metadata:
+  name: weather-api-catalog
+spec:
+  items:
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-api-with-multi-version.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./api-with-multi-version.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-cat-facts-versioning.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./cat-facts-versioning.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-feature-proto-api.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./feature-proto-api.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-my-api-versions.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./my-api-versions.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-my-graphql-api.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./my-graphql-api.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-my-grpc-api.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./my-grpc-api.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-my-template.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./my-template.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-openapi.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./openapi.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-postman-api-with-auth-specific.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./postman-api-with-auth-specific.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-postman-api-with-multiauth.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./postman-api-with-multiauth.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-postman-demo-api-with-jwt.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./postman-demo-api-with-jwt.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-postman-demo-api.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./postman-demo-api.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-test-doc-updated.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./test-doc-updated.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-version-example-api.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./version-example-api.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-weather-forecast-api-with-auth.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./weather-forecast-api-with-auth.yaml
+      type: openapi
+  - apiVersion: backstage.io/v1alpha1
+    kind: API
+    metadata:
+      annotations:
+        github.com/project-slug: ArpitPandeyTalentica/Weather-api
+      name: weather-api-weather-forecast-api.yaml
+    spec:
+      lifecycle: production
+      owner: arpit.pandey@talentica.com
+      path: ./weather-forecast-api.yaml
+      type: openapi
