@@ -1,5 +1,5 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component  # Root kind is Component
+kind: Component
 metadata:
   name: weather-api
   annotations:
@@ -18,7 +18,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./api-with-multi-version.yaml
+        path: api-with-multi-version.yaml  # Direct path, as it's in the same directory
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -29,7 +29,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./cat-facts-versioning.yaml
+        path: cat-facts-versioning.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -40,7 +40,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./feature-proto-api.yaml
+        path: feature-proto-api.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -51,7 +51,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./my-api-versions.yaml
+        path: my-api-versions.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -62,7 +62,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./my-graphql-api.yaml
+        path: my-graphql-api.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -73,7 +73,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./my-grpc-api.yaml
+        path: my-grpc-api.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -84,7 +84,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./my-template.yaml
+        path: my-template.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -95,7 +95,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./openapi.yaml
+        path: openapi.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -106,7 +106,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./postman-api-with-auth-specific.yaml
+        path: postman-api-with-auth-specific.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -117,7 +117,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./postman-api-with-multiauth.yaml
+        path: postman-api-with-multiauth.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -128,7 +128,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./postman-demo-api-with-jwt.yaml
+        path: postman-demo-api-with-jwt.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -139,7 +139,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./postman-demo-api.yaml
+        path: postman-demo-api.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -150,7 +150,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./test-doc-updated.yaml
+        path: test-doc-updated.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -161,7 +161,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./version-example-api.yaml
+        path: version-example-api.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -172,7 +172,7 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./weather-forecast-api-with-auth.yaml
+        path: weather-forecast-api-with-auth.yaml
         type: openapi
     - apiVersion: backstage.io/v1alpha1
       kind: API
@@ -183,5 +183,5 @@ spec:
       spec:
         lifecycle: production
         owner: arpit.pandey@talentica.com
-        path: ./weather-forecast-api.yaml
+        path: weather-forecast-api.yaml
         type: openapi
